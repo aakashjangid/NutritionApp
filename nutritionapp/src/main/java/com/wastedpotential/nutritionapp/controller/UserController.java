@@ -29,6 +29,12 @@ public class UserController {
 		return userService.register(user);
 	}
 	
+	@RequestMapping(value="/{email}/{password}", method=RequestMethod.GET)
+	public User authenticateUser(@PathVariable String email, @PathVariable String password) {
+		return userService.authenticateUser(email, password);
+	}
+	
+	
 	@RequestMapping(value="/register/{encrypt}")
 	public String getEmail(@PathVariable String encrypt) {
 		String email = userService.getEmail(encrypt);

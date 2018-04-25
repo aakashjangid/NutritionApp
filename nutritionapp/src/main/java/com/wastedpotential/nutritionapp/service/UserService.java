@@ -13,5 +13,7 @@ public interface UserService {
 	public String getEmail(String encrypt);
 
 	public void activateUser(String email);
+
+	public User authenticateUser(String email, String password);
 	
 }

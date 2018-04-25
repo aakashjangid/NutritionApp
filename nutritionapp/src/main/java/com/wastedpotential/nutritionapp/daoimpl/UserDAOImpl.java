@@ -55,4 +55,14 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	public User authenticateUser(String email, String password) {
+		String sql = "SELECT * FROM users WHERE email=? AND password=?";
+		try {
+			return jdbcTemplate.queryForObject(sql, new Object[] {email, password}, new UserMapper());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

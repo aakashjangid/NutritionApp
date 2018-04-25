@@ -11,5 +11,7 @@ public interface UserDAO {
 	public int registerUser(User user);
 
 	public void activateUser(String email);
+
+	public User authenticateUser(String email, String password);
 	
 }

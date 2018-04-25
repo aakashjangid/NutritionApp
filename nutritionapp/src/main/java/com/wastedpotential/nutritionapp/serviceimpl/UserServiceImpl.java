@@ -56,4 +56,8 @@ public class UserServiceImpl implements UserService {
 		userDAO.activateUser(email);
 	}
 
+	public User authenticateUser(String email, String password) {
+		return userDAO.authenticateUser(email, password);
+	}
+
 }
