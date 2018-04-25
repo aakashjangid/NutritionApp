@@ -31,7 +31,12 @@ public class UserController {
 	
 	@RequestMapping(value="/{email}/{password}", method=RequestMethod.GET)
 	public User authenticateUser(@PathVariable String email, @PathVariable String password) {
-		return userService.authenticateUser(email, password);
+		User user = userService.authenticateUser(email, password);
+		if(user.getStatus()==1) {
+			return user;
+		}else {
+			return null;
+		}
 	}
 	
 	
