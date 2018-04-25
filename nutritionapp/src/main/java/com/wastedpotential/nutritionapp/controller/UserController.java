@@ -3,6 +3,7 @@ package com.wastedpotential.nutritionapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,5 +27,19 @@ public class UserController {
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public int registerUser(@RequestBody User user) {
 		return userService.register(user);
+	}
+	
+	@RequestMapping(value="/register/{encrypt}")
+	public String getEmail(@PathVariable String encrypt) {
+		String email = userService.getEmail(encrypt);
+		userService.activateUser(email);
+		return "<h1>Nutrition App</h1>"
+				+ "<h4>Your email is activated. Kindly Proceed with the Login.</h4>"
+				+ "<br/> <a href=\"http://yi1007106dt:8080/nutritionapp/users/test\">Click Here for Login Page</a>";
+	}
+	
+	@RequestMapping(value="/test")
+	public String test() {
+		return "<h1>Hello World</h1>";
 	}
 }

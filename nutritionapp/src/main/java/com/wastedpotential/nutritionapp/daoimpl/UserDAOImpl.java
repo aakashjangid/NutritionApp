@@ -46,4 +46,13 @@ public class UserDAOImpl implements UserDAO {
 		return success;
 	}
 
+	public void activateUser(String email) {
+		String sql = "UPDATE users SET status=1 WHERE email=?";
+		try {
+			jdbcTemplate.update(sql, email);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

@@ -9,5 +9,7 @@ public interface UserDAO {
 	public List<User> getAllUsers();
 	
 	public int registerUser(User user);
+
+	public void activateUser(String email);
 	
 }

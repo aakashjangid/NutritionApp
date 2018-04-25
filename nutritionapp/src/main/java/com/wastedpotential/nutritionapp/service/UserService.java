@@ -9,5 +9,9 @@ public interface UserService {
 	public List<User> getAllUsers();
 
 	public int register(User user);
+
+	public String getEmail(String encrypt);
+
+	public void activateUser(String email);
 	
 }

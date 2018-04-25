@@ -8,11 +8,12 @@ public class User {
 	private String password;
 	private String email;
 	private String contact;
+	private int status;
 	
 	public User() {
 	}
 	
-	public User(Integer id, String name, String address, String password, String email, String contact) {
+	public User(Integer id, String name, String address, String password, String email, String contact, int status) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -20,6 +21,7 @@ public class User {
 		this.password = password;
 		this.email = email;
 		this.contact = contact;
+		this.status = status;
 	}
 
 	public Integer getId() {
@@ -33,6 +35,12 @@ public class User {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	public String getAddress() {
 		return address;

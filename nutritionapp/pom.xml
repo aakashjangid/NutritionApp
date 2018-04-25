@@ -84,6 +84,11 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.4</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>nutritionapp</finalName>
