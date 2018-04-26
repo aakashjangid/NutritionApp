@@ -18,3 +18,4 @@ expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickLi
 
 
 
+http://theopentutorials.com/tutorials/android/listview/android-custom-listview-with-image-and-text-using-arrayadapter/
